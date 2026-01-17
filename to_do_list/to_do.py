@@ -3,7 +3,7 @@
 
 file = 'file.txt'
 
-
+# Loading the existing tasks in the file
 def load_tasks():
     try:
         with open(file, 'r') as f:
@@ -11,6 +11,7 @@ def load_tasks():
     except FileNotFoundError:
         return []
     
+# Function to print tasks 
 def read_tasks(tasks):
     if not tasks:
         print("\n------List is Empty------")
@@ -19,6 +20,7 @@ def read_tasks(tasks):
             print(f"{index}. {task}")
     print('-'*25)
 
+# Function to save tasks
 def save_all_tasks(tasks):
     with open(file, 'w') as f:
         for task in tasks:
